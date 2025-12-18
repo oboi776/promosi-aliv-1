@@ -1,0 +1,124 @@
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Open Sans', sans-serif;
+  color:#111;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* TOP NAV */
+.topbar{background:#333;padding:10px 0;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.2)}
+.nav ul{list-style:none;display:flex;gap:22px;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px}
+.nav a{color:#fff;text-decoration:none;font-weight:600;padding:8px 6px;display:block}
+.nav a:hover{opacity:.9}
+
+/* HERO */
+.hero{
+  padding:70px 0 90px;
+  background: linear-gradient(90deg, #fff98c 0%, #aef0bf 30%, #7fded8 60%, #2cc8f6 100%);
+  text-align:center;
+}
+.hero-inner{max-width:980px;margin:0 auto;padding:30px}
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:64px;
+  color:#fff;
+  letter-spacing:4px;
+  text-shadow:0 6px 18px rgba(0,0,0,.08);
+  margin-bottom:18px;
+}
+.lead{
+  color:rgba(255,255,255,.95);
+  font-size:16px;
+  margin-bottom:22px;
+  opacity:.95;
+}
+.btn-primary{
+  display:inline-block;
+  background:#e45745;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  box-shadow:0 6px 0 rgba(0,0,0,.06);
+}
+
+/* GALLERY */
+.gallery-section{padding:48px 20px 30px;background:transparent}
+.section-title{text-align:center;font-family:'Montserrat',sans-serif;font-size:22px;margin-bottom:22px}
+.gallery-row{
+  max-width:1200px;margin:0 auto;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;padding:10px;
+}
+
+.card{
+  width:200px;background:linear-gradient(180deg,#b8ff6e 0%, #d6ff6e 100%);border-radius:10px;padding:12px;box-shadow:0 8px 18px rgba(0,0,0,.12);
+  display:flex;flex-direction:column;align-items:center;
+  transition:transform .25s ease;
+  position:relative;
+}
+.card img{
+  width:100%;height:150px;object-fit:cover;border-radius:12px;border:8px solid #2fdaf6;box-shadow:0 8px 18px rgba(0,0,0,.12)
+}
+.card figcaption{
+  margin-top:10px;font-weight:600;text-align:center;padding:8px 10px;width:100%;border-radius:6px;background:transparent;color:#111
+}
+.card:hover{transform:translateY(-6px)}
+
+/* TESTIMONI */
+.testimoni-section{padding:40px 20px;background:#f7f7f7}
+.testimoni{
+  max-width:1100px;margin:18px auto;padding:26px;background:linear-gradient(90deg,#2cc8f6 0%,#aef0bf 50%,#d6ff6e 100%);
+  border-left:6px solid #4fd6f8;box-shadow:0 6px 18px rgba(0,0,0,.06);text-align:center;font-style:italic;
+}
+.testimoni p{margin-bottom:12px}
+.testimoni footer{margin-top:6px;text-align:right;font-style:normal;color:#222}
+
+/* CONTACT FORM */
+.contact-section{padding:48px 20px 10px}
+.form-wrap{display:flex;justify-content:center}
+.contact-form{
+  width:480px;padding:28px;background:linear-gradient(90deg,#fff98c 0%, #aef0bf 40%, #2cc8f6 100%);border-radius:4px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+.contact-form label{display:block;font-weight:700;margin-bottom:6px}
+.contact-form input,
+.contact-form textarea{
+  width:100%;padding:10px;border-radius:6px;border:1px solid rgba(0,0,0,.15);margin-bottom:12px;font-size:15px
+}
+.contact-form textarea{resize:vertical}
+
+/* ORDER SIDEBAR */
+.order-section{padding:44px 20px 80px;display:flex;justify-content:center}
+.order-wrap{
+  width:360px;padding:26px;background:linear-gradient(90deg,#fff98c 0%, #aef0bf 40%, #2cc8f6 100%);border-radius:2px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+.order-wrap h3{font-family:'Montserrat',sans-serif;margin-bottom:12px}
+.order-wrap label{display:block;font-weight:700;margin:10px 0 6px}
+.order-wrap input, .order-wrap select{
+  width:100%;padding:10px;border-radius:6px;border:1px solid rgba(0,0,0,.15)
+}
+.btn-order{
+  margin-top:14px;background:#ff8273;color:#fff;padding:10px 14px;border-radius:6px;border:none;font-weight:700;cursor:pointer
+}
+
+/* FOOTER */
+.footer{padding:28px 20px;text-align:center;color:#222}
+.footer a{color:#2b7bd3;text-decoration:underline;margin:0 6px}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero h1{font-size:44px}
+  .gallery-row{gap:18px}
+  .card{width:180px}
+}
+@media (max-width:600px){
+  .nav ul{gap:12px;overflow:auto}
+  .hero h1{font-size:32px}
+  .gallery-row{justify-content:flex-start;padding:12px}
+  .contact-form{width:100%;padding:18px}
+  .order-wrap{width:100%}
+}

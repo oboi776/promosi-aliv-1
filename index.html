@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ALIV STUDIO - Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html {
+      scroll-behavior: smooth; /* efek scroll lembut */
+    }
+    .success-message {
+      text-align: center;
+      color: green;
+      font-weight: 700;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#bertanya">Bertanya</a></li>
+        <li><a href="#pesan">Pesan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <h1>ALIV STUDIO</h1>
+      <p class="lead">Menawarkan berbagai kebutuhan wedding dan photo studio anda</p>
+      <a class="btn-primary" href="#galeri">Lihat</a>
+    </div>
+  </section>
+
+  <main>
+    <!-- GALERI -->
+    <section id="galeri" class="gallery-section">
+      <h2 class="section-title">Galeri Kami</h2>
+      <div class="gallery-row">
+        <figure class="card">
+          <img src="ww.jpg" alt="dekor" />
+          <figcaption>Dekorasi Wedding</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="cc.jpg" alt="studio" />
+          <figcaption>Studio Foto Profesional</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="tt.jpg" alt="rias" />
+          <figcaption>Tata Rias</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="pp.jpg" alt="graduation" />
+          <figcaption>Photoshoot</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="wedding shoot.jpg" alt="wedding" />
+          <figcaption>Wedding</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="testimoni-section">
+      <h2 class="section-title">Testimoni Pelanggan</h2>
+      
+      <blockquote class="testimoni">
+        <p>"Paket weddingnya lengkap dan sangat terjangkau. Recommended banget!"</p>
+        <footer>- Irfan, Metro</footer>
+      </blockquote>
+
+      <blockquote class="testimoni">
+        <p>"Fotografernya ramah dan hasilnya luar biasa! Semua momen berkesan."</p>
+        <footer>- Rina, Bandar Lampung</footer>
+      </blockquote>
+
+      <blockquote class="testimoni">
+        <p>"Makeup artist-nya profesional banget, hasilnya natural tapi elegan."</p>
+        <footer>- Sinta, Pringsewu</footer>
+      </blockquote>
+
+      <blockquote class="testimoni">
+        <p>"Sesi foto keluarga di studio sangat menyenangkan, anak-anak juga nyaman!"</p>
+        <footer>- Budi & Keluarga</footer>
+      </blockquote>
+    </section>
+
+    <!-- FORM BERTANYA -->
+    <section id="bertanya" class="contact-section">
+      <h2 class="section-title">Ada yang ingin ditanyakan?</h2>
+      <div class="form-wrap">
+        <form id="formTanya" class="contact-form">
+          <label>Nama:</label>
+          <input type="text" id="namaTanya" placeholder="Nama lengkap" required />
+          <label>Email:</label>
+          <input type="email" id="emailTanya" placeholder="Email" required />
+          <label>Pertanyaan:</label>
+          <textarea id="pesanTanya" rows="6" placeholder="Tulis pertanyaan..." required></textarea>
+          <button class="btn-primary" type="submit">Kirim Pertanyaan</button>
+          <p id="msgTanya" class="success-message">✅ Pertanyaan berhasil dikirim! Kami akan segera membalas.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FORM PESAN -->
+    <section id="pesan" class="order-section">
+      <div class="order-wrap">
+        <h3>Pesan Sekarang</h3>
+        <form id="formPesan">
+          <label>Nama:</label>
+          <input type="text" id="namaPesan" placeholder="Nama" required />
+          <label>Email:</label>
+          <input type="email" id="emailPesan" placeholder="Email" required />
+          <label>Produk:</label>
+          <select id="produkPesan" required>
+            <option value="">Pilih Produk</option>
+            <option value="Foto Wedding">Foto Wedding</option>
+            <option value="Studio">Studio</option>
+            <option value="Tata Rias">Tata Rias</option>
+          </select>
+          <label>Jumlah:</label>
+          <input type="number" id="jumlahPesan" placeholder="Jumlah" min="1" required />
+          <button class="btn-order" type="submit">Pesan Sekarang</button>
+          <p id="msgPesan" class="success-message">✅ Pesanan berhasil dikirim! Kami akan menghubungi Anda via email.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Ikuti kami di media sosial atau hubungi langsung melalui WhatsApp.</p>
+      <p><a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">home</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // ===== Form Bertanya =====
+    const formTanya = document.getElementById("formTanya");
+    const msgTanya = document.getElementById("msgTanya");
+    formTanya.addEventListener("submit", (e) => {
+      e.preventDefault();
+      msgTanya.style.display = "block";
+      formTanya.reset();
+      setTimeout(() => msgTanya.style.display = "none", 4000);
+    });
+
+    // ===== Form Pesan =====
+    const formPesan = document.getElementById("formPesan");
+    const msgPesan = document.getElementById("msgPesan");
+    formPesan.addEventListener("submit", (e) => {
+      e.preventDefault();
+      msgPesan.style.display = "block";
+      formPesan.reset();
+      setTimeout(() => msgPesan.style.display = "none", 4000);
+    });
+  </script>
+</body>
+</html>
